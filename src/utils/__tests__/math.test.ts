@@ -1,5 +1,7 @@
 import { add } from '../math';
 
+// Existing tests for 'add' function are preserved
+
 describe('add', () => {
     it('should return the sum of two positive numbers', () => {
         expect(add(1, 2)).toBe(3);
