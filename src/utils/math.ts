@@ -4,6 +4,7 @@ export function add(a: number, b: number): number {
 export function divide(a: number, b: number): number {
     return a / b;
 }
+// multiply is the product of a and b
 export function multiply(a: number, b: number): number {
     return a * b;
 }
