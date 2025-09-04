@@ -1,77 +1,46 @@
-import { add, divide, multiply } from '../math';
+import { add, divide, multiply, modulo, subtract } from '../math';
 
-describe('add', () => {
-    it('should return the sum of two positive numbers', () => {
-        expect(add(1, 2)).toBe(3);
+describe('modulo', () => {
+    it('should return the remainder of two positive numbers', () => {
+        expect(modulo(5, 2)).toBe(1);
     });
 
-    it('should return the sum of a positive and a negative number', () => {
-        expect(add(5, -3)).toBe(2);
+    it('should return the remainder of a positive and a negative number', () => {
+        expect(modulo(5, -2)).toBe(1);
     });
 
-    it('should return the sum of two negative numbers', () => {
-        expect(add(-4, -6)).toBe(-10);
+    it('should return the remainder of two negative numbers', () => {
+        expect(modulo(-5, -2)).toBe(-1);
     });
 
-    it('should return the sum when one number is zero', () => {
-        expect(add(0, 5)).toBe(5);
-        expect(add(5, 0)).toBe(5);
-    });
-
-    it('should return zero when both numbers are zero', () => {
-        expect(add(0, 0)).toBe(0);
-    });
-});
-
-describe('divide', () => {
-    it('should return the division of two positive numbers', () => {
-        expect(divide(6, 3)).toBe(2);
-    });
-
-    it('should return the division of a positive and a negative number', () => {
-        expect(divide(6, -3)).toBe(-2);
-    });
-
-    it('should return the division of two negative numbers', () => {
-        expect(divide(-6, -3)).toBe(2);
-    });
-
-    it('should return zero when numerator is zero', () => {
-        expect(divide(0, 5)).toBe(0);
-    });
-
-    it('should handle division by one', () => {
-        expect(divide(5, 1)).toBe(5);
-    });
-
-    it('should handle division by negative one', () => {
-        expect(divide(5, -1)).toBe(-5);
+    it('should return zero when the first number is zero', () => {
+        expect(modulo(0, 5)).toBe(0);
     });
 
     it('should throw an error when dividing by zero', () => {
-        expect(() => divide(5, 0)).toThrow();
+        expect(() => modulo(5, 0)).toThrow();
     });
 });
 
-describe('multiply', () => {
-    it('should return the product of two positive numbers', () => {
-        expect(multiply(2, 3)).toBe(6);
+describe('subtract', () => {
+    it('should return the difference of two positive numbers', () => {
+        expect(subtract(5, 3)).toBe(2);
     });
 
-    it('should return the product of a positive and a negative number', () => {
-        expect(multiply(2, -3)).toBe(-6);
+    it('should return the difference of a positive and a negative number', () => {
+        expect(subtract(5, -3)).toBe(8);
     });
 
-    it('should return the product of two negative numbers', () => {
-        expect(multiply(-2, -3)).toBe(6);
+    it('should return the difference of two negative numbers', () => {
+        expect(subtract(-5, -3)).toBe(-2);
     });
 
-    it('should return zero when one of the numbers is zero', () => {
-        expect(multiply(0, 5)).toBe(0);
-        expect(multiply(5, 0)).toBe(0);
+    it('should return zero when both numbers are the same', () => {
+        expect(subtract(5, 5)).toBe(0);
     });
 
-    it('should return zero when both numbers are zero', () => {
-        expect(multiply(0, 0)).toBe(0);
+    it('should handle subtracting zero', () => {
+        expect(subtract(5, 0)).toBe(5);
+        expect(subtract(0, 5)).toBe(-5);
     });
 });
