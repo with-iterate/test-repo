@@ -1,6 +1,11 @@
 import { add, divide, multiply, modulo, subtract } from '../math';
 
-it('should return the remainder of a positive and a negative number', () => {
+describe('modulo', () => {
+    it('should return the remainder of two positive numbers', () => {
+        expect(modulo(5, 2)).toBe(1);
+    });
+
+    it('should return the remainder of a positive and a negative number', () => {
         expect(modulo(5, -2)).toBe(1);
     });
 
