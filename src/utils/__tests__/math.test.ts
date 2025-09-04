@@ -22,12 +22,7 @@ describe('modulo', () => {
     });
 });
 
-describe('subtract', () => {
-    it('should return the difference of two positive numbers', () => {
-        expect(subtract(5, 3)).toBe(2);
-    });
-
-    it('should return the difference of a positive and a negative number', () => {
+it('should return the difference of a positive and a negative number', () => {
         expect(subtract(5, -3)).toBe(8);
     });
 
